@@ -47,17 +47,20 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     public function provideLevelsAndMessages()
     {
         return array(
-            LoggerInterface::EMERGENCY => array(LoggerInterface::EMERGENCY, 'message of level emergency with context: %user%'),
-            LoggerInterface::ALERT => array(LoggerInterface::ALERT, 'message of level alert with context: %user%'),
-            LoggerInterface::CRITICAL => array(LoggerInterface::CRITICAL, 'message of level critical with context: %user%'),
-            LoggerInterface::ERROR => array(LoggerInterface::ERROR, 'message of level error with context: %user%'),
-            LoggerInterface::WARNING => array(LoggerInterface::WARNING, 'message of level warning with context: %user%'),
-            LoggerInterface::NOTICE => array(LoggerInterface::NOTICE, 'message of level notice with context: %user%'),
-            LoggerInterface::INFO => array(LoggerInterface::INFO, 'message of level info with context: %user%'),
-            LoggerInterface::DEBUG => array(LoggerInterface::DEBUG, 'message of level debug with context: %user%'),
+            Level::EMERGENCY => array(Level::EMERGENCY, 'message of level emergency with context: %user%'),
+            Level::ALERT => array(Level::ALERT, 'message of level alert with context: %user%'),
+            Level::CRITICAL => array(Level::CRITICAL, 'message of level critical with context: %user%'),
+            Level::ERROR => array(Level::ERROR, 'message of level error with context: %user%'),
+            Level::WARNING => array(Level::WARNING, 'message of level warning with context: %user%'),
+            Level::NOTICE => array(Level::NOTICE, 'message of level notice with context: %user%'),
+            Level::INFO => array(Level::INFO, 'message of level info with context: %user%'),
+            Level::DEBUG => array(Level::DEBUG, 'message of level debug with context: %user%'),
         );
     }
 
+    /**
+     * @expectedException Psr\Log\InvalidArgumentException
+     */
     public function testThrowsOnInvalidLevel()
     {
         $logger = $this->getLogger();
