@@ -1,0 +1,10 @@
+{
+    "name": "php-fig/log",
+    "description": "Common interface for logging libraries",
+    "authors": [
+        {
+            "name": "PHP-FIG",
+            "homepage": "http://www.php-fig.org/"
+        }
+    ]
+}
