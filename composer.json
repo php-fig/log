@@ -1,10 +1,16 @@
 {
     "name": "php-fig/log",
     "description": "Common interface for logging libraries",
+    "license": "MIT",
     "authors": [
         {
             "name": "PHP-FIG",
             "homepage": "http://www.php-fig.org/"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "Psr\\Log\\": ""
+        }
+    }
 }
