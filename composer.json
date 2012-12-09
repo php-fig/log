@@ -1,5 +1,5 @@
 {
-    "name": "php-fig/psr-log",
+    "name": "psr/log",
     "description": "Common interface for logging libraries",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "PhpFig\\PsrLog\\": ""
+            "Psr\\Log\\": ""
         }
     }
 }
