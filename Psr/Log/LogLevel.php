@@ -35,24 +35,6 @@ class LogLevel
     );
     
     /**
-     * Registers a custom log-level.
-     * 
-     * @param string $name the name of the log-level
-     * @param integer $severity the severity of the log-level; a higher value means more severe
-     */
-    public static function register($name, $severity)
-    {
-        $ref = new ReflectionClass(__CLASS__);
-        foreach ($ref->getConstants() as $constName => $value) {
-            if ($value === $name) {
-                throw new \InvalidArgumentException(sprintf('The built-in log-level "%s" cannot be re-defined.', $name));
-            }
-        }
-        
-        self::$severities[$name] = $severity;
-    }
-    
-    /**
      * Returns the severity of a log-level.
      * 
      * @throws \InvalidArgumentException if the log-level does not exist.
@@ -74,6 +56,9 @@ class LogLevel
      * - integer(-1) if $aLevel is less severe than $bLevel
      * - integer(0) if $aLevel and $bLevel are equally severe
      * - integer(1) if $aLevel is more severe than $bLevel
+     * 
+     * @param string $aLevel
+     * @param string $bLevel
      * 
      * @return integer
      */
