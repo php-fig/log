@@ -47,14 +47,14 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     public function provideLevelsAndMessages()
     {
         return array(
-            Level::EMERGENCY => array(Level::EMERGENCY, 'message of level emergency with context: %user%'),
-            Level::ALERT => array(Level::ALERT, 'message of level alert with context: %user%'),
-            Level::CRITICAL => array(Level::CRITICAL, 'message of level critical with context: %user%'),
-            Level::ERROR => array(Level::ERROR, 'message of level error with context: %user%'),
-            Level::WARNING => array(Level::WARNING, 'message of level warning with context: %user%'),
-            Level::NOTICE => array(Level::NOTICE, 'message of level notice with context: %user%'),
-            Level::INFO => array(Level::INFO, 'message of level info with context: %user%'),
-            Level::DEBUG => array(Level::DEBUG, 'message of level debug with context: %user%'),
+            Level::EMERGENCY => array(Level::EMERGENCY, 'message of level emergency with context: {user}'),
+            Level::ALERT => array(Level::ALERT, 'message of level alert with context: {user}'),
+            Level::CRITICAL => array(Level::CRITICAL, 'message of level critical with context: {user}'),
+            Level::ERROR => array(Level::ERROR, 'message of level error with context: {user}'),
+            Level::WARNING => array(Level::WARNING, 'message of level warning with context: {user}'),
+            Level::NOTICE => array(Level::NOTICE, 'message of level notice with context: {user}'),
+            Level::INFO => array(Level::INFO, 'message of level info with context: {user}'),
+            Level::DEBUG => array(Level::DEBUG, 'message of level debug with context: {user}'),
         );
     }
 
@@ -70,9 +70,9 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testContextReplacement()
     {
         $logger = $this->getLogger();
-        $logger->info('Message %nothing% %user% %foo.bar% 100%', array('user' => 'Bob', 'foo.bar' => 'Bar'));
+        $logger->info('{Message {nothing} {user} {foo.bar} a}', array('user' => 'Bob', 'foo.bar' => 'Bar'));
 
-        $expected = array('info Message %nothing% Bob Bar 100%');
+        $expected = array('info {Message {nothing} Bob Bar a}');
         $this->assertEquals($expected, $this->getLogs());
     }
 
