@@ -1,6 +1,6 @@
 <?php
 
-namespace Psr\Log;
+namespace Psr\Log\Test;
 
 /**
  * Provides a base test class for ensuring compliance with the LoggerInterface
@@ -78,7 +78,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
     public function testObjectCastToString()
     {
-        $dummy = $this->getMock('Psr\Log\DummyTest', array('__toString'));
+        $dummy = $this->getMock('Psr\Log\Test\DummyTest', array('__toString'));
         $dummy->expects($this->once())
             ->method('__toString')
             ->will($this->returnValue('DUMMY'));
