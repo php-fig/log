@@ -10,7 +10,7 @@ namespace Psr\Log;
  * reduce boilerplate code that a simple Logger that does the same thing with 
  * messages regardless of the error level has to implement.
  */
-trait LoggerTrait
+trait LoggerTrait implements LoggerInterface
 {
     /**
      * System is unusable.
@@ -118,14 +118,4 @@ trait LoggerTrait
     {
         $this->log(LogLevel::DEBUG, $message, $context);
     }
-
-    /**
-     * Logs with an arbitrary level.
-     *
-     * @param mixed $level
-     * @param string $message
-     * @param array $context
-     * @return null
-     */
-    abstract public function log($level, $message, array $context = array());
 }
