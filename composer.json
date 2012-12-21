@@ -9,9 +9,6 @@
             "homepage": "http://www.php-fig.org/"
         }
     ],
-    "require": {
-        "psr/log-implementation": "1.0.0"
-    },
     "autoload": {
         "psr-0": {
             "Psr\\Log\\": ""
