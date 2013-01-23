@@ -39,10 +39,11 @@ class LogLevel
      */
     public static function getName($level)
     {
-        if (isset(static::$names[$level]))
+        if (isset(static::$names[$level])) {
             return static::$names[$level];
-        else
-            return null;
+        } else {
+            throw new InvalidLogLevelException();
+        }
     }
 
 }
