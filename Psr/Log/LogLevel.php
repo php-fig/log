@@ -42,7 +42,7 @@ class LogLevel
         if (isset(static::$names[$level])) {
             return static::$names[$level];
         } else {
-            throw new InvalidLogLevelException();
+            throw new InvalidLogLevelException(sprintf('Invalid log level %s', $level));
         }
     }
 
