@@ -7,7 +7,9 @@ namespace Psr\Log;
  */
 trait LoggerAwareTrait
 {
-    /** @var LoggerInterface */
+    /**
+     * @var LoggerInterface|null
+     */
     protected $logger;
 
     /**
@@ -15,7 +17,7 @@ trait LoggerAwareTrait
      * 
      * @param LoggerInterface $logger
      */
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger = null)
     {
         $this->logger = $logger;
     }
