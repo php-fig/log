@@ -86,6 +86,9 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('DUMMY'));
 
         $this->getLogger()->warning($dummy);
+
+        $expected = array('warning DUMMY');
+        $this->assertEquals($expected, $this->getLogs());
     }
 
     public function testContextCanContainAnything()
@@ -102,12 +105,21 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->getLogger()->warning('Crazy context data', $context);
+
+        $expected = array('warning Crazy context data');
+        $this->assertEquals($expected, $this->getLogs());
     }
 
     public function testContextExceptionKeyCanBeExceptionOrOtherValues()
     {
         $this->getLogger()->warning('Random message', array('exception' => 'oops'));
         $this->getLogger()->critical('Uncaught Exception!', array('exception' => new \LogicException('Fail')));
+
+        $expected = array(
+            'warning Random message',
+            'Uncaught Exception!'
+        );
+        $this->assertEquals($expected, $this->getLogs());
     }
 }
 
