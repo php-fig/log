@@ -112,12 +112,13 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
     public function testContextExceptionKeyCanBeExceptionOrOtherValues()
     {
-        $this->getLogger()->warning('Random message', array('exception' => 'oops'));
-        $this->getLogger()->critical('Uncaught Exception!', array('exception' => new \LogicException('Fail')));
+        $logger = $this->getLogger();
+        $logger->warning('Random message', array('exception' => 'oops'));
+        $logger->critical('Uncaught Exception!', array('exception' => new \LogicException('Fail')));
 
         $expected = array(
             'warning Random message',
-            'Uncaught Exception!'
+            'critical Uncaught Exception!'
         );
         $this->assertEquals($expected, $this->getLogs());
     }
