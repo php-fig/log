@@ -2,6 +2,7 @@
 
 namespace Psr\Log\Test;
 
+use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 /**
@@ -61,7 +62,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Psr\Log\InvalidArgumentException
+     * @expectedException \Psr\Log\InvalidArgumentException
      */
     public function testThrowsOnInvalidLevel()
     {
