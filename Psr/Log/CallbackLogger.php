@@ -11,6 +11,9 @@ class CallbackLogger extends AbstractLogger
 
     public function __construct($callback)
     {
+        if (!is_callable($callback)) {
+            throw new InvalidArgumentException('Callback function not callable');
+        }
         $this->callback = $callback;
     }
 
