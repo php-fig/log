@@ -123,6 +123,21 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertEquals($expected, $this->getLogs());
     }
+
+    /**
+     * @dataProvider provideLevelsAndMessages
+     */
+    public function testLogsExceptionAtAllLevels($level, $message)
+    {
+        $logger = $this->getLogger();
+        $exception = new \Exception($message);
+        $logger->exception($exception, $level, array('user' => 'Bob'));
+
+        $expected = array(
+            $level.' message of level '.$level.' with context: Bob',
+        );
+        $this->assertEquals($expected, $this->getLogs());
+    }
 }
 
 class DummyTest

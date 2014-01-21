@@ -120,6 +120,20 @@ trait LoggerTrait
     }
 
     /**
+     * Exception information.
+     *
+     * @param \Exception $exception
+     * @param mixed $level
+     * @param array $context
+     * @return null
+     */
+    public function exception(\Exception $exception, $level = LogLevel::ERROR, array $context = array())
+    {
+        $context["exception"] = $exception;
+        $this->log($level, $exception->getMessage(), $context);
+    }
+
+    /**
      * Logs with an arbitrary level.
      *
      * @param mixed $level
