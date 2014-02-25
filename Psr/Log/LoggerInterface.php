@@ -103,6 +103,16 @@ interface LoggerInterface
     public function debug($message, array $context = array());
 
     /**
+     * Detailed benchmark information about your application
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function benchmark($message, array $context = array());
+
+
+    /**
      * Logs with an arbitrary level.
      *
      * @param mixed $level
