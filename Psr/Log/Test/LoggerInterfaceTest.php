@@ -34,11 +34,11 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideLevelsAndMessages
      */
-    public function testLogsAtAllLevels($level, $message)
+    public function testLogsAtAllLevels($severity, $level, $message)
     {
         $logger = $this->getLogger();
         $logger->{$level}($message, array('user' => 'Bob'));
-        $logger->log($level, $message, array('user' => 'Bob'));
+        $logger->log($severity, $message, array('user' => 'Bob'));
 
         $expected = array(
             $level.' message of level '.$level.' with context: Bob',
@@ -50,14 +50,14 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     public function provideLevelsAndMessages()
     {
         return array(
-            LogLevel::EMERGENCY => array(LogLevel::EMERGENCY, 'message of level emergency with context: {user}'),
-            LogLevel::ALERT => array(LogLevel::ALERT, 'message of level alert with context: {user}'),
-            LogLevel::CRITICAL => array(LogLevel::CRITICAL, 'message of level critical with context: {user}'),
-            LogLevel::ERROR => array(LogLevel::ERROR, 'message of level error with context: {user}'),
-            LogLevel::WARNING => array(LogLevel::WARNING, 'message of level warning with context: {user}'),
-            LogLevel::NOTICE => array(LogLevel::NOTICE, 'message of level notice with context: {user}'),
-            LogLevel::INFO => array(LogLevel::INFO, 'message of level info with context: {user}'),
-            LogLevel::DEBUG => array(LogLevel::DEBUG, 'message of level debug with context: {user}'),
+            array(LogLevel::EMERGENCY, 'emergency', 'message of level emergency with context: {user}'),
+            array(LogLevel::ALERT, 'alert', 'message of level alert with context: {user}'),
+            array(LogLevel::CRITICAL, 'critical', 'message of level critical with context: {user}'),
+            array(LogLevel::ERROR, 'error', 'message of level error with context: {user}'),
+            array(LogLevel::WARNING, 'warning', 'message of level warning with context: {user}'),
+            array(LogLevel::NOTICE, 'notice', 'message of level notice with context: {user}'),
+            array(LogLevel::INFO, 'info', 'message of level info with context: {user}'),
+            array(LogLevel::DEBUG, 'debug', 'message of level debug with context: {user}'),
         );
     }
 

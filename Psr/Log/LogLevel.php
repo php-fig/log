@@ -3,16 +3,49 @@
 namespace Psr\Log;
 
 /**
- * Describes log levels
+ * Defines RFC 5424 log levels.
+ *
+ * @see http://tools.ietf.org/html/rfc5424#section-6.2.1
  */
 class LogLevel
 {
-    const EMERGENCY = 'emergency';
-    const ALERT = 'alert';
-    const CRITICAL = 'critical';
-    const ERROR = 'error';
-    const WARNING = 'warning';
-    const NOTICE = 'notice';
-    const INFO = 'info';
-    const DEBUG = 'debug';
+    /**
+     * Emergency: system is unusable.
+     */
+    const EMERGENCY = 0;
+
+    /**
+     * Alert: action must be taken immediately.
+     */
+    const ALERT = 1;
+
+    /**
+     * Critical: critical conditions.
+     */
+    const CRITICAL = 2;
+
+    /**
+     * Error: error conditions.
+     */
+    const ERROR = 3;
+
+    /**
+     * Warning: warning conditions.
+     */
+    const WARNING = 4;
+
+    /**
+     * Notice: normal but significant condition.
+     */
+    const NOTICE = 5;
+
+    /**
+     * Informational: informational messages.
+     */
+    const INFO = 6;
+
+    /**
+     * Debug: debug-level messages.
+     */
+    const DEBUG = 7;
 }
