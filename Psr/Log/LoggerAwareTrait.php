@@ -7,7 +7,11 @@ namespace Psr\Log;
  */
 trait LoggerAwareTrait
 {
-    /** @var LoggerInterface */
+    /**
+     * The logger instance.
+     *
+     * @var LoggerInterface
+     */
     protected $logger;
 
     /**

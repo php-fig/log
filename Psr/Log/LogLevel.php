@@ -3,7 +3,7 @@
 namespace Psr\Log;
 
 /**
- * Describes log levels
+ * Describes log levels.
  */
 class LogLevel
 {
