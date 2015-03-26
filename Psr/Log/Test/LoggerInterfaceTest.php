@@ -15,7 +15,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
     /**
      * @return LoggerInterface
      */
-    abstract function getLogger();
+    abstract public function getLogger();
 
     /**
      * This must return the log messages in order with a simple formatting: "<LOG LEVEL> <MESSAGE>"
@@ -24,7 +24,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
      *
      * @return string[]
      */
-    abstract function getLogs();
+    abstract public function getLogs();
 
     public function testImplements()
     {
