@@ -36,6 +36,9 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider provideLevelsAndMessages
+     *
+     * @param string $level
+     * @param string $message
      */
     public function testLogsAtAllLevels($level, $message)
     {
@@ -50,6 +53,9 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->getLogs());
     }
 
+    /**
+     * @return array
+     */
     public function provideLevelsAndMessages()
     {
         return array(

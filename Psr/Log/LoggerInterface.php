@@ -118,6 +118,8 @@ interface LoggerInterface
      * @param array  $context
      *
      * @return null
+     *
+     * @throws InvalidArgumentException
      */
     public function log($level, $message, array $context = array());
 }
