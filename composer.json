@@ -2,6 +2,7 @@
     "name": "psr/log",
     "description": "Common interface for logging libraries",
     "keywords": ["psr", "psr-3", "log"],
+    "homepage": "https://github.com/php-fig/log",
     "license": "MIT",
     "authors": [
         {
