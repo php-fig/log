@@ -23,14 +23,4 @@ trait LoggerAwareTrait
     {
         $this->logger = $logger;
     }
-
-    /**
-     * Checks whether a logger instance is already assigned
-     *
-     * @return bool
-     */
-    public function hasLogger()
-    {
-        return $this->logger === null;
-    }
 }
