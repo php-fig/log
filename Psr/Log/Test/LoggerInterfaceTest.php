@@ -84,7 +84,11 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
     public function testObjectCastToString()
     {
-        $dummy = $this->getMock('Psr\Log\Test\DummyTest', array('__toString'));
+        if (method_exists($this, 'createMock')) {
+            $dummy = $this->createMock('Psr\Log\Test\DummyTest', array('__toString'));
+        } else {
+            $dummy = $this->getMock('Psr\Log\Test\DummyTest', array('__toString'));
+        }
         $dummy->expects($this->once())
             ->method('__toString')
             ->will($this->returnValue('DUMMY'));
@@ -130,4 +134,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
 class DummyTest
 {
+    public function __toString()
+    {
+    }
 }
