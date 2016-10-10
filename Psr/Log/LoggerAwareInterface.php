@@ -12,7 +12,7 @@ interface LoggerAwareInterface
      *
      * @param LoggerInterface $logger
      *
-     * @return null
+     * @return void
      */
     public function setLogger(LoggerInterface $logger);
 }
