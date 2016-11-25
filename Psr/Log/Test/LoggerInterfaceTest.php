@@ -107,8 +107,8 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
             'string' => 'Foo',
             'int' => 0,
             'float' => 0.5,
-            'nested' => array('with object' => new DummyTest),
-            'object' => new \DateTime,
+            'nested' => array('with object' => new DummyTest()),
+            'object' => new \DateTime(),
             'resource' => fopen('php://memory', 'r'),
         );
 
@@ -126,7 +126,7 @@ abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
 
         $expected = array(
             'warning Random message',
-            'critical Uncaught Exception!'
+            'critical Uncaught Exception!',
         );
         $this->assertEquals($expected, $this->getLogs());
     }
