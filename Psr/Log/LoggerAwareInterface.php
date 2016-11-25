@@ -15,4 +15,11 @@ interface LoggerAwareInterface
      * @return void
      */
     public function setLogger(LoggerInterface $logger);
+
+    /**
+     * Checks whether a logger instance is already assigned
+     *
+     * @return bool
+     */
+    public function hasLogger();
 }
