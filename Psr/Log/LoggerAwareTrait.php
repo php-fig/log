@@ -23,4 +23,18 @@ trait LoggerAwareTrait
     {
         $this->logger = $logger;
     }
+
+    /**
+     * Conditional log entry.
+     *
+     * @param int    $level
+     * @param string $message
+     * @param array  $context
+     */
+    public function log($level, $message, array $context = [])
+    {
+        if ($this->logger instanceof LoggerInterface) {
+            $this->logger->log($level, $message, $context);
+        }
+    }
 }
