@@ -120,4 +120,14 @@ interface LoggerInterface
      * @return void
      */
     public function log($level, $message, array $context = array());
+
+    /**
+     * Logs information about an exception.
+     *
+     * @param \Exception $exception
+     * @param mixed $level
+     * @param array $context
+     * @return null
+     */
+    public function exception(\Exception $exception, $level = LogLevel::ERROR, array $context = array());
 }

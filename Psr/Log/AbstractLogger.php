@@ -125,4 +125,18 @@ abstract class AbstractLogger implements LoggerInterface
     {
         $this->log(LogLevel::DEBUG, $message, $context);
     }
+
+    /**
+     * Exception information.
+     *
+     * @param \Exception $exception
+     * @param mixed $level
+     * @param array $context
+     * @return null
+     */
+    public function exception(\Exception $exception, $level = LogLevel::ERROR, array $context = array())
+    {
+        $context["exception"] = $exception;
+        $this->log($level, $exception->getMessage(), $context);
+    }
 }
