@@ -11,7 +11,7 @@ use Psr\Log\LogLevel;
  * Implementors can extend the class and implement abstract methods to run this
  * as part of their test suite.
  */
-abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
+abstract class LoggerInterfaceTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @return LoggerInterface
