@@ -1,4 +1,5 @@
 <?php
+
 namespace Psr\Log\Test;
 
 if (!class_exists('\\PHPUnit_Framework_TestCase', true)) {
