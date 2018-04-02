@@ -1,7 +1,9 @@
 <?php
 namespace Psr\Log\Test;
 
-require_once __DIR__ . '/backward_compatible.php';
+if (!class_exists('\\PHPUnit_Framework_TestCase', true)) {
+    class_alias('\\PHPUnit\\Framework\\TestCase', '\\PHPUnit_Framework_TestCase');
+}
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
