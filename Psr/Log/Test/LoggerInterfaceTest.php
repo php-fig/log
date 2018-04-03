@@ -2,7 +2,7 @@
 
 namespace Psr\Log\Test;
 
-if (!class_exists('\\PHPUnit_Framework_TestCase', true)) {
+if (!class_exists('\\PHPUnit\\Framework\\TestCase', true)) {
     class_alias('\\PHPUnit\\Framework\\TestCase', '\\PHPUnit_Framework_TestCase');
 }
 
