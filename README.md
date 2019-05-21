@@ -1,52 +1,12 @@
-PSR Log
-=======
+Logger Interface
+==============
 
-This repository holds all interfaces/classes/traits related to
-[PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
+This repository holds all the common code related to [PSR-3 (Logger Interface)][psr-url].
 
-Note that this is not a logger of its own. It is merely an interface that
-describes a logger. See the specification for more details.
+Note that this is not a Logger implementation of its own. It is merely abstractions that describe the components of a Logger.
 
-Installation
-------------
+You can find [implementations][implementation-url] and [installation instructions][package-url] for the specification on the packagist.
 
-```bash
-composer require psr/log
-```
-
-Usage
------
-
-If you need a logger, you can use the interface like this:
-
-```php
-<?php
-
-use Psr\Log\LoggerInterface;
-
-class Foo
-{
-    private $logger;
-
-    public function __construct(LoggerInterface $logger = null)
-    {
-        $this->logger = $logger;
-    }
-
-    public function doSomething()
-    {
-        if ($this->logger) {
-            $this->logger->info('Doing work');
-        }
-
-        // do something useful
-    }
-}
-```
-
-You can then pick one of the implementations of the interface to get a logger.
-
-If you want to implement the interface, you can require this package and
-implement `Psr\Log\LoggerInterface` in your code. Please read the
-[specification text](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
-for details.
+[psr-url]: https://www.php-fig.org/psr/psr-3/
+[package-url]: https://packagist.org/packages/psr/log
+[implementation-url]: https://packagist.org/providers/psr/log-implementation
