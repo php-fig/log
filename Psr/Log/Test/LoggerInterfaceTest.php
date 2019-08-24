@@ -2,8 +2,8 @@
 
 namespace Psr\Log\Test;
 
-if (!class_exists('\\PHPUnit\\Framework\\TestCase', true)) {
-    class_alias('\\PHPUnit_Framework_TestCase', '\\PHPUnit\\Framework\\TestCase');
+if (!class_exists('PHPUnit\\Framework\\TestCase', true)) {
+    class_alias('PHPUnit_Framework_TestCase', 'PHPUnit\\Framework\\TestCase');
 }
 
 use Psr\Log\LoggerInterface;
