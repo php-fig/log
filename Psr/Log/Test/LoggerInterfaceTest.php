@@ -2,6 +2,7 @@
 
 namespace Psr\Log\Test;
 
+use Psr\Log\EnumContext;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use PHPUnit\Framework\TestCase;
@@ -126,8 +127,8 @@ abstract class LoggerInterfaceTest extends TestCase
     public function testContextExceptionKeyCanBeExceptionOrOtherValues()
     {
         $logger = $this->getLogger();
-        $logger->warning('Random message', array('exception' => 'oops'));
-        $logger->critical('Uncaught Exception!', array('exception' => new \LogicException('Fail')));
+        $logger->warning('Random message', array(EnumContext::EXCEPTION => 'oops'));
+        $logger->critical('Uncaught Exception!', array(EnumContext::EXCEPTION => new \LogicException('Fail')));
 
         $expected = array(
             'warning Random message',

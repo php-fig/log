@@ -38,6 +38,12 @@ class Foo
         if ($this->logger) {
             $this->logger->info('Doing work');
         }
+           
+        try {
+            $this->doSomethingElse();
+        } catch (Exception $exception) {
+            $this->logger->error('Oh no!', array(\Psr\Log\EnumContext::EXCEPTION => $exception));
+        }
 
         // do something useful
     }
