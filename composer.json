@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Psr\\Log\\": "Psr/Log/"
+            "Psr\\Log\\": "src"
         }
     },
     "extra": {
