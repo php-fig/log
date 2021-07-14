@@ -12,7 +12,7 @@ trait LoggerAwareTrait
      *
      * @var LoggerInterface|null
      */
-    protected $logger;
+    protected ?LoggerInterface $logger = null;
 
     /**
      * Sets a logger.
