@@ -15,7 +15,7 @@ class NullLogger extends AbstractLogger
     /**
      * Logs with an arbitrary level.
      *
-     * @param mixed  $level
+     * @param LogLevel::*  $level
      * @param string|\Stringable $message
      * @param array $context
      *
