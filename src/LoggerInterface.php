@@ -113,7 +113,7 @@ interface LoggerInterface
     /**
      * Logs with an arbitrary level.
      *
-     * @param mixed   $level
+     * @param LogLevel::*   $level
      * @param string|\Stringable $message
      * @param mixed[] $context
      *
