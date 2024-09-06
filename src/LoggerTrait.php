@@ -86,13 +86,4 @@ trait LoggerTrait
     {
         $this->log(LogLevel::DEBUG, $message, $context);
     }
-
-    /**
-     * Logs with an arbitrary level.
-     *
-     * @param mixed $level
-     *
-     * @throws \Psr\Log\InvalidArgumentException
-     */
-    abstract public function log($level, string|\Stringable $message, array $context = []): void;
 }
