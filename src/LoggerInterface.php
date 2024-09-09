@@ -89,6 +89,7 @@ interface LoggerInterface
     /**
      * Logs with an arbitrary level.
      *
+     * @param mixed $level
      * @param mixed[] $context
      *
      * @throws \Psr\Log\InvalidArgumentException
