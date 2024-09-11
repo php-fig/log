@@ -22,27 +22,25 @@ If you need a logger, you can use the interface like this:
 ```php
 <?php
 
+declare(strict_types=1);
+
 use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
-class Foo
+final readonly class Foo
 {
-    private $logger;
+    public function __construct(
+        private LoggerInterface $logger = new NullLogger()
+    ){}
 
-    public function __construct(LoggerInterface $logger = null)
+    public function doSomething(): void
     {
-        $this->logger = $logger;
-    }
+        $this->logger->info('Doing work');
 
-    public function doSomething()
-    {
-        if ($this->logger) {
-            $this->logger->info('Doing work');
-        }
-           
         try {
             $this->doSomethingElse();
-        } catch (Exception $exception) {
-            $this->logger->error('Oh no!', array('exception' => $exception));
+        } catch (Throwable $e) {
+            $this->logger->error('Oh no!', ['exception' => $e]);
         }
 
         // do something useful
