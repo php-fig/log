@@ -23,6 +23,7 @@ interface LoggerInterface
      * System is unusable.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function emergency(string|\Stringable $message, array $context = []): void;
 
@@ -33,6 +34,7 @@ interface LoggerInterface
      * trigger the SMS alerts and wake you up.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function alert(string|\Stringable $message, array $context = []): void;
 
@@ -42,6 +44,7 @@ interface LoggerInterface
      * Example: Application component unavailable, unexpected exception.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function critical(string|\Stringable $message, array $context = []): void;
 
@@ -50,6 +53,7 @@ interface LoggerInterface
      * be logged and monitored.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function error(string|\Stringable $message, array $context = []): void;
 
@@ -60,6 +64,7 @@ interface LoggerInterface
      * that are not necessarily wrong.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function warning(string|\Stringable $message, array $context = []): void;
 
@@ -67,6 +72,7 @@ interface LoggerInterface
      * Normal but significant events.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function notice(string|\Stringable $message, array $context = []): void;
 
@@ -76,6 +82,7 @@ interface LoggerInterface
      * Example: User logs in, SQL logs.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function info(string|\Stringable $message, array $context = []): void;
 
@@ -83,6 +90,7 @@ interface LoggerInterface
      * Detailed debug information.
      *
      * @param mixed[] $context
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function debug(string|\Stringable $message, array $context = []): void;
 
@@ -93,6 +101,7 @@ interface LoggerInterface
      * @param mixed[] $context
      *
      * @throws \Psr\Log\InvalidArgumentException
+     * @psalm-capabilities read-props|write-this-props|write-props|read-globals|write-globals|io|time
      */
     public function log($level, string|\Stringable $message, array $context = []): void;
 }
